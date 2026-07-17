@@ -1,12 +1,15 @@
 {
   "name": "neuro-design-system",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "lint:css": "stylelint \"src/**/*.scss\"",
+    "format": "oxfmt --write",
+    "format:check": "oxfmt --check",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -28,10 +31,13 @@
     "@vitejs/plugin-react": "^6.0.3",
     "@vitest/browser-playwright": "^4.1.10",
     "@vitest/coverage-v8": "^4.1.10",
+    "oxfmt": "^0.59.0",
     "oxlint": "^1.71.0",
     "playwright": "^1.61.1",
     "sass": "^1.101.0",
     "storybook": "^10.5.2",
+    "stylelint": "^17.14.0",
+    "stylelint-config-standard-scss": "^17.0.0",
     "typescript": "~6.0.2",
     "vite": "^8.1.1",
     "vitest": "^4.1.10"

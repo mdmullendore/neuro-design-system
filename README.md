@@ -14,13 +14,13 @@ The goal is a component hierarchy that's scalable and composable, with a naming 
 
 ## The Anatomy
 
-| Tier | Neuro Term | Description |
-|------|-----------|--------------|
-| 1 | **Neuron** | The smallest indivisible unit. Can't be broken down further without losing function. *(button, input, icon, label, badge)* |
-| 2 | **Synapse** | A small, functional connection between neurons — the smallest thing that "does" something. *(search bar, form field, labeled toggle)* |
-| 3 | **Circuit** | A self-contained cluster of synapses performing a recognizable job in the UI. *(navbar, card, modal, pricing table)* |
-| 4 | **Pathway** | The structural layout that arranges circuits into a page skeleton — placement logic, no real content yet. *(dashboard layout, article layout)* |
-| 5 | **Cortex** | A fully realized, populated instance of a pathway — real content, real state, ready to ship. *(the actual /dashboard page)* |
+| Tier | Neuro Term  | Description                                                                                                                                    |
+| ---- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | **Neuron**  | The smallest indivisible unit. Can't be broken down further without losing function. _(button, input, icon, label, badge)_                     |
+| 2    | **Synapse** | A small, functional connection between neurons — the smallest thing that "does" something. _(search bar, form field, labeled toggle)_          |
+| 3    | **Circuit** | A self-contained cluster of synapses performing a recognizable job in the UI. _(navbar, card, modal, pricing table)_                           |
+| 4    | **Pathway** | The structural layout that arranges circuits into a page skeleton — placement logic, no real content yet. _(dashboard layout, article layout)_ |
+| 5    | **Cortex**  | A fully realized, populated instance of a pathway — real content, real state, ready to ship. _(the actual /dashboard page)_                    |
 
 ## Neurotransmitters (Global Utility Classes)
 
@@ -30,12 +30,12 @@ In the nervous system, neurotransmitters are the chemical signals that cross syn
 
 Unlike Neurons through Cortex, Neurotransmitters aren't a rung on the structural ladder — they're a cross-cutting layer that flows through all of them.
 
-| Utility Category | Neurotransmitter Analogy | Reasoning |
-|---|---|---|
-| Spacing/layout utilities | **Serotonin** | Regulates balance and rhythm — spacing does the same visually |
-| Color utilities | **Dopamine** | Associated with reward and visual salience — color drives attention |
-| Typography utilities | **Glutamate** | The brain's primary excitatory signal — carries the core message, like text does |
-| Motion/transition utilities | **Adrenaline** | Governs speed and urgency — maps to animation and transition timing |
+| Utility Category            | Neurotransmitter Analogy | Reasoning                                                                        |
+| --------------------------- | ------------------------ | -------------------------------------------------------------------------------- |
+| Spacing/layout utilities    | **Serotonin**            | Regulates balance and rhythm — spacing does the same visually                    |
+| Color utilities             | **Dopamine**             | Associated with reward and visual salience — color drives attention              |
+| Typography utilities        | **Glutamate**            | The brain's primary excitatory signal — carries the core message, like text does |
+| Motion/transition utilities | **Adrenaline**           | Governs speed and urgency — maps to animation and transition timing              |
 
 > **Note:** this sub-mapping is documentation flavor, not a naming convention. Actual utility classes should stay practical and legible (e.g. `.sero-spacing-md`, `.dop-text-primary`, `.ad-motion-fast`) — "Neurotransmitters" is the conceptual label for the utility layer as a whole, not a prefix to bake into class names.
 
@@ -54,6 +54,7 @@ src/
 ## Why this exists
 
 This is a portfolio project built to demonstrate:
+
 - Component architecture and design system thinking
 - Scalable, composable UI patterns
 - A naming taxonomy that's intentional rather than decorative — each tier maps to a real, escalating scale in neuroanatomy (cell → connection → circuit → pathway → region)
@@ -77,4 +78,4 @@ TBD
 
 ---
 
-*Built as an open-source portfolio project. Docs and structure are a work in progress and will evolve as the system matures. No more messy systems that cause your neurvous system to go into fight or flight (aka stress).*
+_Built as an open-source portfolio project. Docs and structure are a work in progress and will evolve as the system matures. No more messy systems that cause your neurvous system to go into fight or flight (aka stress)._

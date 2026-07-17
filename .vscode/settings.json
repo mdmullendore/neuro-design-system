@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "oxc.fmt.configPath": ".oxfmtrc.json",
+  "[javascript][javascriptreact][typescript][typescriptreact][json]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "stylelint.validate": ["css", "scss"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit"
+  }
+}
