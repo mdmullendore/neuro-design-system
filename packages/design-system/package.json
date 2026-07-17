@@ -3,18 +3,37 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "files": ["dist"],
   "exports": {
-    "./neurons/*": "./src/neurons/*/index.ts",
-    "./synapses/*": "./src/synapses/*/index.ts",
-    "./circuits/*": "./src/circuits/*/index.ts",
-    "./pathways/*": "./src/pathways/*/index.ts",
-    "./cortex/*": "./src/cortex/*/index.ts",
-    "./neurotransmitters/index.scss": "./src/neurotransmitters/index.scss"
+    "./neurons/*": {
+      "types": "./dist/neurons/*/index.d.ts",
+      "import": "./dist/neurons/*/index.js"
+    },
+    "./synapses/*": {
+      "types": "./dist/synapses/*/index.d.ts",
+      "import": "./dist/synapses/*/index.js"
+    },
+    "./circuits/*": {
+      "types": "./dist/circuits/*/index.d.ts",
+      "import": "./dist/circuits/*/index.js"
+    },
+    "./pathways/*": {
+      "types": "./dist/pathways/*/index.d.ts",
+      "import": "./dist/pathways/*/index.js"
+    },
+    "./cortex/*": {
+      "types": "./dist/cortex/*/index.d.ts",
+      "import": "./dist/cortex/*/index.js"
+    },
+    "./neurotransmitters/index.scss": "./dist/neurotransmitters/index.scss",
+    "./package.json": "./package.json"
   },
-  "dependencies": {
-    "@neuro/tokens": "*"
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:tokens": "node --experimental-strip-types src/tokens/generate-scss.ts",
+    "build:js": "tsc -p tsconfig.build.json",
+    "build:scss": "node scripts/copy-scss.mjs",
+    "build": "npm run clean && npm run build:tokens && npm run build:js && npm run build:scss"
   },
   "devDependencies": {
     "react-native": "^0.86.0"

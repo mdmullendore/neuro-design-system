@@ -1,4 +1,4 @@
-import "../packages/design-system/src/neurotransmitters/index.scss";
+import "@neuro/design-system/neurotransmitters/index.scss";
 
 const preview = {
   parameters: {

@@ -7,17 +7,16 @@
   ],
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "npm run build --workspace=@neuro/design-system && vite",
+    "build": "npm run build --workspace=@neuro/design-system && tsc -b && vite build",
     "lint": "oxlint",
     "lint:css": "stylelint \"src/**/*.scss\" \"packages/*/src/**/*.scss\"",
     "format": "oxfmt --write",
     "format:check": "oxfmt --check",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "storybook:native": "storybook dev -p 6007 -c .storybook-native",
-    "build-storybook": "storybook build",
-    "tokens:build": "npm run build --workspace=@neuro/tokens"
+    "storybook": "npm run build --workspace=@neuro/design-system && storybook dev -p 6006",
+    "storybook:native": "npm run build --workspace=@neuro/design-system && storybook dev -p 6007 -c .storybook-native",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@neuro/design-system": "*",

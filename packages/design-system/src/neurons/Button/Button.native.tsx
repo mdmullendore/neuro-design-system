@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, type PressableProps } from "react-native";
-import { color, spacing, typography } from "@neuro/tokens";
+import { color, spacing, typography } from "../../tokens";
 import type { ButtonVariant } from "./Button.variant";
 
 export interface ButtonProps extends PressableProps {
