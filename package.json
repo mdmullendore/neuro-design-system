@@ -2,19 +2,25 @@
   "name": "neuro-design-system",
   "version": "0.0.0",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "lint:css": "stylelint \"src/**/*.scss\"",
+    "lint:css": "stylelint \"src/**/*.scss\" \"packages/*/src/**/*.scss\"",
     "format": "oxfmt --write",
     "format:check": "oxfmt --check",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:native": "storybook dev -p 6007 -c .storybook-native",
+    "build-storybook": "storybook build",
+    "tokens:build": "npm run build --workspace=@neuro/tokens"
   },
   "dependencies": {
+    "@neuro/design-system": "*",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
@@ -24,6 +30,7 @@
     "@storybook/addon-docs": "^10.5.2",
     "@storybook/addon-mcp": "^0.7.0",
     "@storybook/addon-vitest": "^10.5.2",
+    "@storybook/react-native-web-vite": "^10.5.2",
     "@storybook/react-vite": "^10.5.2",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
@@ -34,6 +41,8 @@
     "oxfmt": "^0.59.0",
     "oxlint": "^1.71.0",
     "playwright": "^1.61.1",
+    "react-native": "^0.86.0",
+    "react-native-web": "^0.21.1",
     "sass": "^1.101.0",
     "storybook": "^10.5.2",
     "stylelint": "^17.14.0",

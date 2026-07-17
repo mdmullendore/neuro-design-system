@@ -1,4 +1,4 @@
-import { Button } from "./neurons/Button";
+import { Button } from "@neuro/design-system/neurons/Button";
 
 function App() {
   return (

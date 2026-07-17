@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react-vite";
-import "../src/neurotransmitters/index.scss";
+import "../packages/design-system/src/neurotransmitters/index.scss";
 
 const preview: Preview = {
   parameters: {

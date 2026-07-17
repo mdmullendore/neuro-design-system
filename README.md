@@ -41,15 +41,58 @@ Unlike Neurons through Cortex, Neurotransmitters aren't a rung on the structural
 
 ## Project Structure
 
+This is an npm workspaces monorepo, so the design system can be installed as a package and consumed on both web and React Native:
+
 ```
-src/
-├── neurons/           # Tier 1 — smallest UI primitives
-├── synapses/          # Tier 2 — small functional groupings
-├── circuits/          # Tier 3 — self-contained UI sections
-├── pathways/          # Tier 4 — page-level layout templates
-├── cortex/            # Tier 5 — fully composed pages
-└── neurotransmitters/ # Global utility classes (spacing, color, type, motion)
+packages/
+├── tokens/         # @neuro/tokens — color, spacing, typography, motion as plain TS values
+└── design-system/  # @neuro/design-system — the component tiers + Neurotransmitter Sass layer
+    └── src/
+        ├── neurons/           # Tier 1 — smallest UI primitives
+        ├── synapses/          # Tier 2 — small functional groupings
+        ├── circuits/          # Tier 3 — self-contained UI sections
+        ├── pathways/          # Tier 4 — page-level layout templates
+        ├── cortex/            # Tier 5 — fully composed pages
+        └── neurotransmitters/ # Global utility classes (spacing, color, type, motion)
+
+src/            # Demo app + web Storybook — consume @neuro/design-system as a package
+.storybook/     # Web Storybook config
 ```
+
+## Installation
+
+Within this monorepo, `@neuro/tokens` and `@neuro/design-system` are linked automatically via npm workspaces — just install from the repo root:
+
+```bash
+npm install
+```
+
+Consuming packages (like the demo app in `src/`) depend on them the same way any package dependency is used:
+
+```ts
+import { Button } from "@neuro/design-system/neurons/Button";
+import "@neuro/design-system/neurotransmitters/index.scss";
+```
+
+## Design Tokens
+
+`@neuro/tokens` is the single source of truth for color, spacing, typography, and motion values — defined as plain TypeScript objects, not CSS:
+
+```ts
+// packages/tokens/src/color.ts
+export const color = {
+  bg: "#0f1115",
+  accent: "#7c5cff",
+  // ...
+} as const;
+```
+
+Two things consume those TS values, for two different platforms:
+
+- **Web:** `npm run tokens:build` runs `packages/tokens/src/generate-scss.ts`, which converts every token into a CSS custom property and writes `packages/design-system/src/neurotransmitters/_tokens.scss`. Web components (`.tsx` + `.module.scss`) reference those as `--color-*` / `--font-*` / `--motion-*` custom properties. This generated file is never hand-edited — it's regenerated from the TS source whenever a token changes.
+- **React Native:** there's no CSS on RN, so `.native.tsx` components import the same TS values directly (e.g. `color.accent`) instead of going through custom properties.
+
+This keeps one authored source of truth (TypeScript) feeding both a CSS layer for web and direct values for native.
 
 ## Why this exists
 

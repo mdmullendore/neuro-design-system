@@ -1,0 +1,31 @@
+{
+  "name": "@neuro/design-system",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    "./neurons/*": "./src/neurons/*/index.ts",
+    "./synapses/*": "./src/synapses/*/index.ts",
+    "./circuits/*": "./src/circuits/*/index.ts",
+    "./pathways/*": "./src/pathways/*/index.ts",
+    "./cortex/*": "./src/cortex/*/index.ts",
+    "./neurotransmitters/index.scss": "./src/neurotransmitters/index.scss"
+  },
+  "dependencies": {
+    "@neuro/tokens": "*"
+  },
+  "devDependencies": {
+    "react-native": "^0.86.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-native": "*"
+  },
+  "peerDependenciesMeta": {
+    "react-native": {
+      "optional": true
+    }
+  }
+}

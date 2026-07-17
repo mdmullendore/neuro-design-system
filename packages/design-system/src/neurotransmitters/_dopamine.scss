@@ -1,15 +1,5 @@
 // Dopamine — color & visual salience utilities
-
-:root {
-  --color-bg: #0f1115;
-  --color-surface: #181b21;
-  --color-text-primary: #f4f5f7;
-  --color-text-muted: #9aa1ac;
-  --color-accent: #7c5cff;
-  --color-accent-strong: #9c85ff;
-  --color-danger: #ff5c6c;
-  --color-success: #4ade80;
-}
+// Custom property values come from the generated _tokens.scss (see @neuro/tokens).
 
 .dop-text-primary {
   color: var(--color-text-primary);
