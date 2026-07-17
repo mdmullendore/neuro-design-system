@@ -1,0 +1,19 @@
+// Neurotransmitters — global utility layer.
+// These cross-cutting styles apply at every tier (Neuron through Cortex),
+// independent of the structural hierarchy. See README for the full analogy.
+
+@forward "serotonin";
+@forward "dopamine";
+@forward "glutamate";
+@forward "adrenaline";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+}

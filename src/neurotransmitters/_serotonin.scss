@@ -1,0 +1,17 @@
+// Serotonin — spacing & rhythm utilities
+
+$space-unit: 4px;
+
+@each $name, $multiplier in (xs: 1, sm: 2, md: 4, lg: 6, xl: 10, "2xl": 16) {
+  .sero-stack-#{$name} > * + * {
+    margin-top: $space-unit * $multiplier;
+  }
+
+  .sero-gap-#{$name} {
+    gap: $space-unit * $multiplier;
+  }
+
+  .sero-p-#{$name} {
+    padding: $space-unit * $multiplier;
+  }
+}
