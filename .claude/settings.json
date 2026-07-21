@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run build:tokens)",
+      "Bash(npm run build --workspace=@neuro/design-system)",
+      "Bash(npm run lint)",
+      "Bash(npm run lint:css)",
+      "Bash(npm run format:check)",
+      "Bash(npm run format)",
+      "Bash(npm run storybook)",
+      "Bash(npm run storybook:native)",
+      "Bash(npm run build-storybook)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)"
+    ],
+    "deny": [
+      "Bash(git push *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean *)",
+      "Bash(git branch -D *)",
+      "Bash(npm publish *)",
+      "Bash(npm install *)",
+      "Bash(npm uninstall *)"
+    ]
+  }
+}
