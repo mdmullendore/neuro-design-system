@@ -1,0 +1,19 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Neurotransmitters/Dopamine" />
+
+# Dopamine
+
+Color & visual salience utilities. Every value is generated from `src/tokens/color.ts` —
+the same source that generates the `--color-*` custom properties and the
+`.dop-{text,bg,border,outline}-*` utility classes, so nothing here can drift from what's
+actually shipped.
+
+- **Brand** — `brand.primary/secondary/tertiary` → `.dop-*-brand-{primary,secondary,tertiary}`
+- **Semantic** — `bg`, `surface`, `text-primary`, `text-muted`, `accent`, `accent-strong`,
+  `danger`, `success` → `.dop-*-{name}`
+- **Palette** — a Tailwind-inspired 50–900 shade scale across nine hues (`slate`, `red`,
+  `orange`, `amber`, `green`, `teal`, `blue`, `purple`, `pink`) → `.dop-*-{hue}-{shade}`
+
+See the [Colors story](?path=/story/neurotransmitters-dopamine-colors--default) for every
+swatch.

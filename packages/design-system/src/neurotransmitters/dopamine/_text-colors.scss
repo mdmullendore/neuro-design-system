@@ -1,0 +1,18 @@
+// Dopamine / text-colors — `color` utilities
+// Custom property values come from the generated _tokens.scss (see @neuro/tokens).
+
+@use "names";
+
+@each $name in names.$named {
+  .dop-text-#{$name} {
+    color: var(--color-#{$name});
+  }
+}
+
+@each $hue in names.$hues {
+  @each $shade in names.$shades {
+    .dop-text-#{$hue}-#{$shade} {
+      color: var(--color-#{$hue}-#{$shade});
+    }
+  }
+}

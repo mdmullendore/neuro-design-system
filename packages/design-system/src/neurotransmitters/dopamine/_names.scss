@@ -1,0 +1,11 @@
+// Shared color-name lists for the dopamine utility partials.
+// Keep in sync with the token names in src/tokens/color.ts.
+
+$named:
+  bg, surface, text-primary, text-muted, accent, accent-strong, danger, success, brand-primary,
+  brand-secondary, brand-tertiary;
+
+// Quoted: several of these (red, orange, green, teal...) are recognized CSS
+// color keywords in Sass and would otherwise be resolved as colors, not strings.
+$hues: "slate", "red", "orange", "amber", "green", "teal", "blue", "purple", "pink";
+$shades: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;

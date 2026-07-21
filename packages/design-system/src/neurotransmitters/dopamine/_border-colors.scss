@@ -1,0 +1,18 @@
+// Dopamine / border-colors — `border-color` utilities
+// Custom property values come from the generated _tokens.scss (see @neuro/tokens).
+
+@use "names";
+
+@each $name in names.$named {
+  .dop-border-#{$name} {
+    border-color: var(--color-#{$name});
+  }
+}
+
+@each $hue in names.$hues {
+  @each $shade in names.$shades {
+    .dop-border-#{$hue}-#{$shade} {
+      border-color: var(--color-#{$hue}-#{$shade});
+    }
+  }
+}

@@ -1,22 +1,8 @@
 // Dopamine — color & visual salience utilities
-// Custom property values come from the generated _tokens.scss (see @neuro/tokens).
+// Split by CSS property across the dopamine/ partials; see that folder for the
+// shared name/hue/shade lists (dopamine/_names.scss).
 
-.dop-text-primary {
-  color: var(--color-text-primary);
-}
-
-.dop-text-muted {
-  color: var(--color-text-muted);
-}
-
-.dop-text-accent {
-  color: var(--color-accent);
-}
-
-.dop-bg-surface {
-  background-color: var(--color-surface);
-}
-
-.dop-bg-accent {
-  background-color: var(--color-accent);
-}
+@forward "dopamine/text-colors";
+@forward "dopamine/background-color";
+@forward "dopamine/border-colors";
+@forward "dopamine/outline-color";

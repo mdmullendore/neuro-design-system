@@ -1,5 +1,5 @@
-export { color } from "./color";
-export type { ColorToken } from "./color";
+export { color, palette, brand } from "./color";
+export type { ColorToken, PaletteHue, PaletteShade, BrandColorToken } from "./color";
 export { spacing } from "./spacing";
 export type { SpacingToken } from "./spacing";
 export { typography } from "./typography";

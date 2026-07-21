@@ -3,7 +3,7 @@
 // Sass Modules. Runs automatically as part of this package's `build` script.
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { color } from "./color.ts";
+import { color, palette, brand } from "./color.ts";
 import { typography } from "./typography.ts";
 import { motion } from "./motion.ts";
 
@@ -16,6 +16,10 @@ const lines = [
   "",
   ":root {",
   ...Object.entries(color).map(([name, value]) => `  --color-${kebab(name)}: ${value};`),
+  ...Object.entries(brand).map(([name, value]) => `  --color-brand-${kebab(name)}: ${value};`),
+  ...Object.entries(palette).flatMap(([hue, shades]) =>
+    Object.entries(shades).map(([shade, value]) => `  --color-${hue}-${shade}: ${value};`),
+  ),
   `  --font-family-base: ${typography.fontFamilyBase};`,
   // fontFamilyBase is emitted separately above since it isn't a size; the rest
   // are px values in the TS source, converted to rem for the generated CSS.

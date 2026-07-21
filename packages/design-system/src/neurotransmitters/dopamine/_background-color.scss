@@ -1,0 +1,18 @@
+// Dopamine / background-color — `background-color` utilities
+// Custom property values come from the generated _tokens.scss (see @neuro/tokens).
+
+@use "names";
+
+@each $name in names.$named {
+  .dop-bg-#{$name} {
+    background-color: var(--color-#{$name});
+  }
+}
+
+@each $hue in names.$hues {
+  @each $shade in names.$shades {
+    .dop-bg-#{$hue}-#{$shade} {
+      background-color: var(--color-#{$hue}-#{$shade});
+    }
+  }
+}
