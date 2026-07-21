@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react-vite";
 import "@neuro/design-system/neurotransmitters/index.scss";
+import { neuroTheme } from "./theme";
 
 const preview: Preview = {
   parameters: {
@@ -15,6 +16,24 @@ const preview: Preview = {
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
       test: "todo",
+    },
+
+    docs: {
+      theme: neuroTheme,
+    },
+
+    options: {
+      storySort: {
+        order: [
+          "Getting Started",
+          ["Welcome"],
+          "Neurons",
+          "Synapses",
+          "Circuits",
+          "Pathways",
+          "Cortex",
+        ],
+      },
     },
   },
 };

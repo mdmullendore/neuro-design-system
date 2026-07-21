@@ -1,0 +1,64 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Getting Started/Welcome" />
+
+<div className="sero-stack-md">
+  <img src="/favicon.svg" width={56} height={54} alt="Neuro Design System" />
+  <h1 className="glu-text-xl dop-text-primary">Neuro Design System</h1>
+  <p className="glu-text-lg dop-text-muted">
+    A component-based design system organized like the nervous system — from a single cell, to a
+    connection, to a functioning circuit, to a mapped pathway, to a fully active region of cortex.
+  </p>
+</div>
+
+Neuro organizes UI components the way the nervous system is organized: each tier only
+builds on the tier below it, so the sidebar on the left reads as an escalating scale —
+smallest, most indivisible pieces at the top, fully composed pages at the bottom.
+
+## The tiers
+
+| Tier | Neuro term  | What it means                                                                                                 |
+| ---- | ----------- | ------------------------------------------------------------------------------------------------------------- |
+| 1    | **Neuron**  | The smallest indivisible unit — can't be broken down further without losing function. _(button, input, icon)_ |
+| 2    | **Synapse** | A small functional grouping of neurons — the smallest thing that "does" something. _(search bar, form field)_ |
+| 3    | **Circuit** | A self-contained UI section built from synapses. _(navbar, card, modal)_                                      |
+| 4    | **Pathway** | Page-level layout skeletons — placement only, no real content yet.                                            |
+| 5    | **Cortex**  | Fully composed pages — real content, real state, ready to ship.                                               |
+
+A component only belongs one tier up from its most complex direct dependency — if a
+Circuit imports another Circuit, it's probably actually a Pathway.
+
+## Neurotransmitters
+
+Cutting across every tier is a global Sass utility layer, styled after the chemical
+signals that cross synapses between neurons:
+
+- **Serotonin** (`sero-`) — spacing utilities
+- **Dopamine** (`dop-`) — color utilities
+- **Glutamate** (`glu-`) — typography utilities
+- **Adrenaline** (`ad-`) — motion utilities
+- **Oxytocin** (`oxy-`) — layout (flex/grid)
+
+Every custom property and utility class is generated from one source of truth — the
+design tokens in `tokens/` — so color, spacing, typography, and motion never drift
+between components.
+
+## Install
+
+```bash
+npm install @neuro/design-system
+```
+
+```ts
+import { Button } from "@neuro/design-system/neurons/Button";
+import "@neuro/design-system/neurotransmitters/index.scss";
+```
+
+One package gets you both the components and the token-driven styling system — nothing
+else to install.
+
+## Learn more
+
+- [GitHub repository](https://github.com/mdmullendore/neuro-design-system) — source,
+  issues, and the full README
+- Browse the sidebar to explore components tier by tier, starting with **Neurons**

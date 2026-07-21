@@ -1,4 +1,4 @@
-# 🧠 Neuro Design System [WIP]
+# 🧠 [WIP] - Neuro Design System
 
 > A component-based design system inspired by neuroanatomy — building interfaces the way the brain builds thought, from single neurons up to fully functioning cortex.
 

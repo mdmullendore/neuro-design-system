@@ -1,12 +1,30 @@
 import type { StorybookConfig } from "@storybook/react-native-web-vite";
+import remarkGfm from "remark-gfm";
 
 const config: StorybookConfig = {
   stories: [
     "../packages/design-system/src/**/*.mdx",
     "../packages/design-system/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
-  addons: ["@storybook/addon-a11y", "@storybook/addon-docs"],
+  addons: [
+    "@storybook/addon-a11y",
+    // GFM (tables, strikethrough, task lists, ...) isn't enabled by MDX out of the
+    // box — addon-docs needs remark-gfm passed through explicitly.
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
+  ],
   framework: "@storybook/react-native-web-vite",
+  // Serves public/favicon.svg (auto-detected as the manager favicon) and makes it
+  // available at /favicon.svg for the manager theme's brandImage.
+  staticDirs: ["../public"],
   async viteFinal(viteConfig) {
     // The root vite.config.ts (used by the web app + web Storybook) registers its own
     // @vitejs/plugin-react, and Storybook merges that in alongside the RN-Web framework's
